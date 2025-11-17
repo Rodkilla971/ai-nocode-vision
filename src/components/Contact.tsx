@@ -1,30 +1,24 @@
 import { Mail, Phone, MessageSquare } from "lucide-react";
 import { useEffect, useRef } from "react";
 
-declare global {
-  interface Window {
-    zcal?: {
-      init: () => void;
-    };
-  }
-}
-
 const Contact = () => {
   const widgetRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    // Attendre que le script soit chargé
-    const checkZcal = setInterval(() => {
-      if (window.zcal && widgetRef.current) {
-        clearInterval(checkZcal);
-        // Réinitialiser le contenu
-        widgetRef.current.innerHTML = '<a href="https://zcal.co/i/3R_XnOe1">Vous propose un premier contact pour faire connaissance - Schedule a meeting</a>';
-        // Forcer zcal à initialiser les widgets
-        window.zcal.init();
-      }
-    }, 100);
+    // Charger le script zcal dynamiquement APRÈS que React ait rendu le widget
+    const script = document.createElement('script');
+    script.src = 'https://static.zcal.co/embed/v1/embed.js';
+    script.async = true;
+    script.type = 'text/javascript';
+    
+    document.body.appendChild(script);
 
-    return () => clearInterval(checkZcal);
+    return () => {
+      // Cleanup : retirer le script quand le composant est démonté
+      if (document.body.contains(script)) {
+        document.body.removeChild(script);
+      }
+    };
   }, []);
 
   return (
