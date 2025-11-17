@@ -1,6 +1,32 @@
 import { Mail, Phone, MessageSquare } from "lucide-react";
+import { useEffect, useRef } from "react";
+
+declare global {
+  interface Window {
+    zcal?: {
+      init: () => void;
+    };
+  }
+}
 
 const Contact = () => {
+  const widgetRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    // Attendre que le script soit chargé
+    const checkZcal = setInterval(() => {
+      if (window.zcal && widgetRef.current) {
+        clearInterval(checkZcal);
+        // Réinitialiser le contenu
+        widgetRef.current.innerHTML = '<a href="https://zcal.co/i/3R_XnOe1">Vous propose un premier contact pour faire connaissance - Schedule a meeting</a>';
+        // Forcer zcal à initialiser les widgets
+        window.zcal.init();
+      }
+    }, 100);
+
+    return () => clearInterval(checkZcal);
+  }, []);
+
   return (
     <section id="contact" className="py-20 bg-background">
       <div className="container mx-auto px-4">
@@ -69,11 +95,13 @@ const Contact = () => {
                 Réserver un rendez-vous
               </h3>
               <div 
+                ref={widgetRef}
                 className="zcal-inline-widget min-h-[600px]"
-                dangerouslySetInnerHTML={{
-                  __html: '<a href="https://zcal.co/i/3R_XnOe1">Vous propose un premier contact pour faire connaissance - Schedule a meeting</a>'
-                }}
-              />
+              >
+                <a href="https://zcal.co/i/3R_XnOe1">
+                  Vous propose un premier contact pour faire connaissance - Schedule a meeting
+                </a>
+              </div>
             </div>
           </div>
         </div>
