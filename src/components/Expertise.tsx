@@ -28,7 +28,7 @@ const expertiseItems = [
   {
     icon: Brain,
     title: "Intégration IA",
-    tools: "ChatGPT, Prompt Engineering",
+    tools: "LLM, Prompt Engineering",
     description: "Exploitez la puissance de l'IA pour automatiser vos processus métier.",
   },
   {
