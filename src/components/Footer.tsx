@@ -1,4 +1,5 @@
 import { Linkedin, Mail, ExternalLink } from "lucide-react";
+import logo from "@/assets/logo-croissance-ia.png";
 
 const Footer = () => {
   return (
@@ -6,7 +7,14 @@ const Footer = () => {
       <div className="container mx-auto px-4">
         <div className="grid md:grid-cols-3 gap-8 mb-8">
           <div>
-            <h3 className="text-2xl font-bold mb-4">Croissance IA</h3>
+            <div className="flex items-center gap-3 mb-4">
+              <img
+                src={logo}
+                alt="Logo Croissance IA"
+                className="h-8 w-auto"
+              />
+              <h3 className="text-2xl font-bold">Croissance IA</h3>
+            </div>
             <p className="text-primary-foreground/80 mb-4">
               Votre partenaire pour automatiser, optimiser et accélérer votre activité grâce à l'IA et au no-code.
             </p>
