@@ -1,36 +1,22 @@
 import { Linkedin, Mail, ExternalLink } from "lucide-react";
 import logo from "@/assets/logo-croissance-ia.png";
-
 const Footer = () => {
-  return (
-    <footer className="bg-primary text-primary-foreground py-12">
+  return <footer className="bg-primary text-primary-foreground py-12">
       <div className="container mx-auto px-4">
         <div className="grid md:grid-cols-3 gap-8 mb-8">
           <div>
             <div className="flex items-center gap-3 mb-4">
-              <img
-                src={logo}
-                alt="Logo Croissance IA"
-                className="h-8 w-auto"
-              />
+              <img src={logo} alt="Logo Croissance IA" className="h-8 w-auto" />
               <h3 className="text-2xl font-bold">Croissance IA</h3>
             </div>
             <p className="text-primary-foreground/80 mb-4">
               Votre partenaire pour automatiser, optimiser et accélérer votre activité grâce à l'IA et au no-code.
             </p>
             <div className="flex gap-4">
-              <a 
-                href="https://linkedin.com" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="w-10 h-10 rounded-lg bg-primary-foreground/10 hover:bg-primary-foreground/20 flex items-center justify-center transition-colors"
-              >
+              <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-lg bg-primary-foreground/10 hover:bg-primary-foreground/20 flex items-center justify-center transition-colors">
                 <Linkedin className="w-5 h-5" />
               </a>
-              <a 
-                href="mailto:contact@croissance-ia.fr"
-                className="w-10 h-10 rounded-lg bg-primary-foreground/10 hover:bg-primary-foreground/20 flex items-center justify-center transition-colors"
-              >
+              <a href="mailto:contact@croissance-ia.fr" className="w-10 h-10 rounded-lg bg-primary-foreground/10 hover:bg-primary-foreground/20 flex items-center justify-center transition-colors">
                 <Mail className="w-5 h-5" />
               </a>
             </div>
@@ -50,10 +36,9 @@ const Footer = () => {
                 </a>
               </li>
               <li>
-                <button 
-                  onClick={() => document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" })}
-                  className="text-primary-foreground/80 hover:text-primary-foreground transition-colors"
-                >
+                <button onClick={() => document.getElementById("contact")?.scrollIntoView({
+                behavior: "smooth"
+              })} className="text-primary-foreground/80 hover:text-primary-foreground transition-colors">
                   Audit gratuit
                 </button>
               </li>
@@ -70,7 +55,7 @@ const Footer = () => {
               </li>
               <li>
                 <a href="tel:+33123456789" className="hover:text-primary-foreground transition-colors">
-                  +33 1 23 45 67 89
+                  +33 6 38 81 69 11                  
                 </a>
               </li>
               <li className="text-sm">
@@ -97,8 +82,6 @@ const Footer = () => {
           </div>
         </div>
       </div>
-    </footer>
-  );
+    </footer>;
 };
-
 export default Footer;
