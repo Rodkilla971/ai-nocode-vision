@@ -1,33 +1,6 @@
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { Textarea } from "@/components/ui/textarea";
-import { Label } from "@/components/ui/label";
 import { Mail, Phone, MessageSquare } from "lucide-react";
-import { useState } from "react";
-import { toast } from "sonner";
 
 const Contact = () => {
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    phone: "",
-    message: "",
-  });
-
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    // Here you would typically send the form data to your backend
-    toast.success("Message envoyé ! Nous vous répondrons sous 24h.");
-    setFormData({ name: "", email: "", phone: "", message: "" });
-  };
-
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value,
-    });
-  };
-
   return (
     <section id="contact" className="py-20 bg-background">
       <div className="container mx-auto px-4">
@@ -37,7 +10,7 @@ const Contact = () => {
               Prêt à transformer votre activité ?
             </h2>
             <p className="text-xl text-muted-foreground">
-              Contactez-moi pour discuter de votre projet
+              Réservez votre audit gratuit ou contactez-moi directement
             </p>
           </div>
 
@@ -92,72 +65,15 @@ const Contact = () => {
             </div>
 
             <div className="bg-card rounded-2xl p-8 border border-border shadow-lg">
-              <form onSubmit={handleSubmit} className="space-y-6">
-                <div>
-                  <Label htmlFor="name">Nom complet *</Label>
-                  <Input
-                    id="name"
-                    name="name"
-                    value={formData.name}
-                    onChange={handleChange}
-                    required
-                    className="mt-2"
-                    placeholder="Jean Dupont"
-                  />
-                </div>
-
-                <div>
-                  <Label htmlFor="email">Email *</Label>
-                  <Input
-                    id="email"
-                    name="email"
-                    type="email"
-                    value={formData.email}
-                    onChange={handleChange}
-                    required
-                    className="mt-2"
-                    placeholder="jean@exemple.fr"
-                  />
-                </div>
-
-                <div>
-                  <Label htmlFor="phone">Téléphone (optionnel)</Label>
-                  <Input
-                    id="phone"
-                    name="phone"
-                    type="tel"
-                    value={formData.phone}
-                    onChange={handleChange}
-                    className="mt-2"
-                    placeholder="+33 6 12 34 56 78"
-                  />
-                </div>
-
-                <div>
-                  <Label htmlFor="message">Votre message / besoin *</Label>
-                  <Textarea
-                    id="message"
-                    name="message"
-                    value={formData.message}
-                    onChange={handleChange}
-                    required
-                    className="mt-2 min-h-[120px]"
-                    placeholder="Décrivez votre projet ou vos besoins en quelques mots..."
-                  />
-                </div>
-
-                <Button 
-                  type="submit" 
-                  size="lg"
-                  className="w-full bg-accent hover:bg-accent/90 text-accent-foreground rounded-xl"
-                >
-                  Envoyer ma demande
-                </Button>
-
-                <p className="text-sm text-muted-foreground text-center">
-                  En envoyant ce formulaire, vous acceptez d'être contacté par Croissance IA
-                </p>
-              </form>
+              <h3 className="text-xl font-semibold text-foreground mb-6 text-center">
+                Réserver un rendez-vous
+              </h3>
+              <div 
+                className="zcal-inline-widget min-h-[600px]"
+                dangerouslySetInnerHTML={{
+                  __html: '<a href="https://zcal.co/i/3R_XnOe1">Vous propose un premier contact pour faire connaissance - Schedule a meeting</a>'
+                }}
+              />
             </div>
           </div>
         </div>

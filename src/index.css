@@ -127,3 +127,13 @@ All colors MUST be HSL.
     @apply bg-background text-foreground;
   }
 }
+
+/* Style personnalisé pour le widget zcal */
+.zcal-inline-widget iframe {
+  border-radius: 0.75rem;
+  min-height: 600px;
+}
+
+.zcal-inline-widget a {
+  display: none; /* Cache le lien de fallback une fois le widget chargé */
+}
