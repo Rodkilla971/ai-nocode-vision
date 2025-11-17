@@ -90,7 +90,7 @@ const Contact = () => {
               </h3>
               <div 
                 ref={widgetRef}
-                className="zcal-inline-widget min-h-[600px]"
+                className="zcal-inline-widget min-h-[600px] bg-black rounded-xl p-4"
               >
                 <a href="https://zcal.co/i/3R_XnOe1">
                   Vous propose un premier contact pour faire connaissance - Schedule a meeting
