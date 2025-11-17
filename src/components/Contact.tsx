@@ -1,18 +1,14 @@
 import { Mail, Phone, MessageSquare } from "lucide-react";
 import { useEffect, useRef } from "react";
-
 const Contact = () => {
   const widgetRef = useRef<HTMLDivElement>(null);
-
   useEffect(() => {
     // Charger le script zcal dynamiquement APRÈS que React ait rendu le widget
     const script = document.createElement('script');
     script.src = 'https://static.zcal.co/embed/v1/embed.js';
     script.async = true;
     script.type = 'text/javascript';
-    
     document.body.appendChild(script);
-
     return () => {
       // Cleanup : retirer le script quand le composant est démonté
       if (document.body.contains(script)) {
@@ -20,9 +16,7 @@ const Contact = () => {
       }
     };
   }, []);
-
-  return (
-    <section id="contact" className="py-20 bg-background">
+  return <section id="contact" className="py-20 bg-background">
       <div className="container mx-auto px-4">
         <div className="max-w-5xl mx-auto">
           <div className="text-center mb-16">
@@ -84,14 +78,11 @@ const Contact = () => {
               </div>
             </div>
 
-            <div className="bg-card rounded-2xl p-8 border border-border shadow-lg">
-              <h3 className="text-xl font-semibold text-foreground mb-6 text-center">
+            <div className="bg-card p-8 border border-border shadow-lg rounded-none">
+              <h3 className="font-semibold text-foreground mb-6 text-center mx-0 my-px py-0 px-px text-xl">
                 Réserver un rendez-vous
               </h3>
-              <div 
-                ref={widgetRef}
-                className="zcal-inline-widget min-h-[600px] bg-black rounded-xl p-4"
-              >
+              <div ref={widgetRef} className="zcal-inline-widget min-h-[600px] p-0 bg-gray-800 rounded-xl">
                 <a href="https://zcal.co/i/3R_XnOe1">
                   Vous propose un premier contact pour faire connaissance - Schedule a meeting
                 </a>
@@ -100,8 +91,6 @@ const Contact = () => {
           </div>
         </div>
       </div>
-    </section>
-  );
+    </section>;
 };
-
 export default Contact;
