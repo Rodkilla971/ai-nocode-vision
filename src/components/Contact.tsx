@@ -79,7 +79,7 @@ const Contact = () => {
             </div>
 
             <div className="bg-card p-8 border border-border shadow-lg rounded-none">
-              <h3 className="font-semibold text-foreground mb-6 text-center mx-0 my-px py-0 px-px text-xl">
+              <h3 className="text-2xl font-bold text-foreground mb-6">
                 Réserver un rendez-vous
               </h3>
               <div ref={widgetRef} className="zcal-inline-widget min-h-[600px] p-0 bg-gray-800 rounded-xl">
