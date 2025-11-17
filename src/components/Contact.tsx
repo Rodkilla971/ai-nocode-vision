@@ -37,7 +37,7 @@ const Contact = () => {
           <div className="grid md:grid-cols-2 gap-12">
             <div>
               <h3 className="text-2xl font-bold text-foreground mb-6">
-                Réserver un rendez-vous
+                Parlons de votre projet
               </h3>
               
               <p className="text-muted-foreground mb-8 leading-relaxed">
@@ -84,7 +84,10 @@ const Contact = () => {
               </div>
             </div>
 
-            <div>
+            <div className="bg-card rounded-2xl p-8 border border-border shadow-lg">
+              <h3 className="text-xl font-semibold text-foreground mb-6 text-center">
+                Réserver un rendez-vous
+              </h3>
               <div 
                 ref={widgetRef}
                 className="zcal-inline-widget min-h-[600px] bg-black rounded-xl p-4"
