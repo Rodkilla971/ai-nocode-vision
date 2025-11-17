@@ -16,8 +16,7 @@ const Contact = () => {
       }
     };
   }, []);
-  return (
-    <section id="contact" className="py-20 bg-background">
+  return <section id="contact" className="py-20 bg-background">
       <div className="container mx-auto px-4">
         <div className="max-w-5xl mx-auto">
           <div className="text-center mb-16">
@@ -29,7 +28,7 @@ const Contact = () => {
             <div className="p-8">
               <h3 className="text-2xl font-bold text-foreground mb-6">Parlons de votre projet</h3>
 
-              <p className="text-muted-foreground mb-8 leading-relaxed">
+              <p className="text-muted-foreground mb-8 leading-relaxed rounded-none">
                 Que vous ayez un projet précis en tête ou simplement envie d'explorer les possibilités, je suis là pour
                 vous accompagner. Réponse garantie sous 24h.
               </p>
@@ -41,10 +40,7 @@ const Contact = () => {
                   </div>
                   <div>
                     <div className="font-medium text-foreground mb-1">Email</div>
-                    <a
-                      href="mailto:contact@croissance-ia.fr"
-                      className="text-muted-foreground hover:text-accent transition-colors"
-                    >
+                    <a href="mailto:contact@croissance-ia.fr" className="text-muted-foreground hover:text-accent transition-colors">
                       contact@croissance-ia.fr
                     </a>
                   </div>
@@ -85,7 +81,6 @@ const Contact = () => {
           </div>
         </div>
       </div>
-    </section>
-  );
+    </section>;
 };
 export default Contact;
