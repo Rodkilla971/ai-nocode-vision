@@ -61,7 +61,7 @@ const Navigation = () => {
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
           <button onClick={() => scrollToSection("home")} className="flex items-center gap-3 hover:opacity-80 transition-opacity" aria-label="Retour à l'accueil">
-            <img alt="Logo Croissance IA" className="h-12 w-auto" src="/lovable-uploads/a22a087f-d2a5-4a16-a29b-79b6439b085b.png" />
+            <img alt="Logo Croissance IA" className="h-12 w-auto" src="/lovable-uploads/fab02a17-21ba-4aa4-bda2-c1ef7e2da355.png" />
             <span className="font-bold text-xl text-foreground hidden sm:block">
               Croissance IA
             </span>

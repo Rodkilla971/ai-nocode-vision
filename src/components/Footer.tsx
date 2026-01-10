@@ -1,35 +1,22 @@
 import { Linkedin, Mail, ExternalLink } from "lucide-react";
 import logo from "@/assets/logo-croissance-ia.png";
 const Footer = () => {
-  return (
-    <footer className="bg-primary text-primary-foreground py-12">
+  return <footer className="bg-primary text-primary-foreground py-12">
       <div className="container mx-auto px-4">
         <div className="grid md:grid-cols-3 gap-8 mb-8">
           <div>
             <div className="flex items-center gap-3 mb-4">
-              <img
-                alt="Logo Croissance IA"
-                className="h-8 w-auto"
-                src="/lovable-uploads/254a1b26-715a-4511-828b-5e8485b839cd.png"
-              />
+              <img alt="Logo Croissance IA" className="h-8 w-auto" src="/lovable-uploads/44cd7a2f-f7c0-430b-bffd-e6cb184a059e.png" />
               <h3 className="text-2xl font-bold">Croissance IA</h3>
             </div>
             <p className="text-primary-foreground/80 mb-4">
               Votre partenaire pour automatiser, optimiser et accélérer votre activité grâce à l'IA et au no-code.
             </p>
             <div className="flex gap-4">
-              <a
-                href="https://linkedin.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="w-10 h-10 rounded-lg bg-primary-foreground/10 hover:bg-primary-foreground/20 flex items-center justify-center transition-colors"
-              >
+              <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-lg bg-primary-foreground/10 hover:bg-primary-foreground/20 flex items-center justify-center transition-colors">
                 <Linkedin className="w-5 h-5" />
               </a>
-              <a
-                href="mailto:contact@croissance-ia.com"
-                className="w-10 h-10 rounded-lg bg-primary-foreground/10 hover:bg-primary-foreground/20 flex items-center justify-center transition-colors"
-              >
+              <a href="mailto:contact@croissance-ia.com" className="w-10 h-10 rounded-lg bg-primary-foreground/10 hover:bg-primary-foreground/20 flex items-center justify-center transition-colors">
                 <Mail className="w-5 h-5" />
               </a>
             </div>
@@ -39,30 +26,19 @@ const Footer = () => {
             <h4 className="font-bold mb-4">Liens rapides</h4>
             <ul className="space-y-2">
               <li>
-                <a
-                  href="#expertise"
-                  className="text-primary-foreground/80 hover:text-primary-foreground transition-colors"
-                >
+                <a href="#expertise" className="text-primary-foreground/80 hover:text-primary-foreground transition-colors">
                   Nos expertises
                 </a>
               </li>
               <li>
-                <a
-                  href="#contact"
-                  className="text-primary-foreground/80 hover:text-primary-foreground transition-colors"
-                >
+                <a href="#contact" className="text-primary-foreground/80 hover:text-primary-foreground transition-colors">
                   Contact
                 </a>
               </li>
               <li>
-                <button
-                  onClick={() =>
-                    document.getElementById("contact")?.scrollIntoView({
-                      behavior: "smooth",
-                    })
-                  }
-                  className="text-primary-foreground/80 hover:text-primary-foreground transition-colors"
-                >
+                <button onClick={() => document.getElementById("contact")?.scrollIntoView({
+                behavior: "smooth"
+              })} className="text-primary-foreground/80 hover:text-primary-foreground transition-colors">
                   Audit gratuit
                 </button>
               </li>
@@ -93,24 +69,17 @@ const Footer = () => {
           </p>
 
           <div className="flex gap-6 text-sm">
-            <a
-              href="#"
-              className="text-primary-foreground/60 hover:text-primary-foreground transition-colors flex items-center gap-1"
-            >
+            <a href="#" className="text-primary-foreground/60 hover:text-primary-foreground transition-colors flex items-center gap-1">
               Mentions légales
               <ExternalLink className="w-3 h-3" />
             </a>
-            <a
-              href="#"
-              className="text-primary-foreground/60 hover:text-primary-foreground transition-colors flex items-center gap-1"
-            >
+            <a href="#" className="text-primary-foreground/60 hover:text-primary-foreground transition-colors flex items-center gap-1">
               Politique de confidentialité
               <ExternalLink className="w-3 h-3" />
             </a>
           </div>
         </div>
       </div>
-    </footer>
-  );
+    </footer>;
 };
 export default Footer;
