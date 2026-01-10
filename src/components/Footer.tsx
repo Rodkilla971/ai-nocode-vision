@@ -6,7 +6,7 @@ const Footer = () => {
         <div className="grid md:grid-cols-3 gap-8 mb-8">
           <div>
             <div className="flex items-center gap-3 mb-4">
-              <img src={logo} alt="Logo Croissance IA" className="h-8 w-auto" />
+              <img alt="Logo Croissance IA" className="h-8 w-auto" src="/lovable-uploads/254a1b26-715a-4511-828b-5e8485b839cd.png" />
               <h3 className="text-2xl font-bold">Croissance IA</h3>
             </div>
             <p className="text-primary-foreground/80 mb-4">
