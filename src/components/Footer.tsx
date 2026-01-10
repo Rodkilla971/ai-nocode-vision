@@ -49,8 +49,8 @@ const Footer = () => {
             <h4 className="font-bold mb-4">Contact</h4>
             <ul className="space-y-2 text-primary-foreground/80">
               <li>
-                <a href="mailto:contact@croissance-ia.fr" className="hover:text-primary-foreground transition-colors">
-                  contact@croissance-ia.fr
+                <a className="hover:text-primary-foreground transition-colors" href="mailto:contact@croissance-ia.com">
+                  contact@croissance-ia.com
                 </a>
               </li>
               <li>
