@@ -58,15 +58,24 @@ const Navigation = () => {
   }];
   return <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled ? "bg-background/95 backdrop-blur-md shadow-md" : "bg-background/80 backdrop-blur-sm"}`}>
       <div className="container mx-auto px-4">
-        <div className="flex items-center justify-between h-20">
-          {/* Logo */}
-          <button onClick={() => scrollToSection("home")} className="flex items-center gap-3 hover:opacity-80 transition-opacity" aria-label="Retour à l'accueil">
+      <div className="flex flex-col md:flex-row items-center justify-between py-4 md:h-20">
+          {/* Logo - Centré en mobile/tablette, à gauche en desktop */}
+          <button onClick={() => scrollToSection("home")} className="flex items-center gap-3 hover:opacity-80 transition-opacity mb-2 md:mb-0 lg:order-none" aria-label="Retour à l'accueil">
             <img alt="Logo Croissance IA" className="h-12 w-auto" src="/lovable-uploads/fc8da04e-3a11-4e45-a419-743e32100e3c.png" />
-            
           </button>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center gap-8">
+          <div className="hidden lg:flex items-center gap-8">
+            {navItems.map(item => <button key={item.id} onClick={() => scrollToSection(item.id)} className={`text-sm font-medium transition-colors hover:text-accent ${activeSection === item.id ? "text-accent" : "text-foreground/80"}`}>
+                {item.label}
+              </button>)}
+            <Button onClick={() => scrollToSection("contact")} className="bg-accent hover:bg-accent/90 text-accent-foreground font-semibold">
+              Audit gratuit
+            </Button>
+          </div>
+
+          {/* Tablet Navigation - Centré sous le logo */}
+          <div className="hidden md:flex lg:hidden items-center gap-6 flex-wrap justify-center">
             {navItems.map(item => <button key={item.id} onClick={() => scrollToSection(item.id)} className={`text-sm font-medium transition-colors hover:text-accent ${activeSection === item.id ? "text-accent" : "text-foreground/80"}`}>
                 {item.label}
               </button>)}
@@ -77,7 +86,7 @@ const Navigation = () => {
 
           {/* Mobile Menu */}
           <Sheet open={isOpen} onOpenChange={setIsOpen}>
-            <SheetTrigger asChild className="md:hidden">
+            <SheetTrigger asChild className="md:hidden absolute right-4 top-4">
               <Button variant="ghost" size="icon" aria-label="Menu">
                 {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
               </Button>
