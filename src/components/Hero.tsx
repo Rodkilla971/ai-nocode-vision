@@ -21,7 +21,7 @@ const Hero = () => {
         />
       </div>
 
-      <div className="container relative z-10 mx-auto px-4">
+      <div className="container relative z-10 mx-auto px-4 pt-24 md:pt-0">
         <div className="max-w-4xl">
           <h1 className="text-5xl md:text-7xl font-bold text-primary-foreground mb-6 leading-tight">
             Accélérez votre croissance grâce à{" "}
