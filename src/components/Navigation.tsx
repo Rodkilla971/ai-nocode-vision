@@ -62,9 +62,7 @@ const Navigation = () => {
           {/* Logo */}
           <button onClick={() => scrollToSection("home")} className="flex items-center gap-3 hover:opacity-80 transition-opacity" aria-label="Retour à l'accueil">
             <img alt="Logo Croissance IA" className="h-12 w-auto" src="/lovable-uploads/fc8da04e-3a11-4e45-a419-743e32100e3c.png" />
-            <span className="font-bold text-xl text-foreground hidden sm:block">
-              Croissance IA
-            </span>
+            
           </button>
 
           {/* Desktop Navigation */}
