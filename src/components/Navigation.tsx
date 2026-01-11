@@ -79,9 +79,6 @@ const Navigation = () => {
             {navItems.map(item => <button key={item.id} onClick={() => scrollToSection(item.id)} className={`text-sm font-medium transition-colors hover:text-accent ${activeSection === item.id ? "text-accent" : "text-foreground/80"}`}>
                 {item.label}
               </button>)}
-            <Button onClick={() => scrollToSection("contact")} className="bg-accent hover:bg-accent/90 text-accent-foreground font-semibold">
-              Audit gratuit
-            </Button>
           </div>
 
           {/* Mobile Menu */}
